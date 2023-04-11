@@ -10,6 +10,6 @@ import com.tweteroo.api.models.TweetApp;
 
 @Repository
 public interface TweetRepository extends JpaRepository<TweetApp, Long> {
-  @Query(value = "SELECT * FROM TWEET_APP WHERE USERNAME = ?1", nativeQuery = true)
+  @Query(value = "SELECT * FROM TWEET_APP WHERE USERNAME = ?1 ORDER BY ID DESC", nativeQuery = true)
   List<TweetApp> findTweetsByName(String name);
 }
