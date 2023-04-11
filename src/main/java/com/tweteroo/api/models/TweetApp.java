@@ -18,7 +18,7 @@ public class TweetApp {
     TweetDTO req
   ){
     this.username = req.username();
-    this.tweet = req.tweet();
+    this.tweet = req.text();
   }
 
   @Id

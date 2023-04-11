@@ -1,5 +1,8 @@
 package com.tweteroo.api.services;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,5 +18,9 @@ public class TweetService {
 
   public void create(TweetApp data){
     repository.save(data);
+  }
+
+  public List<TweetApp> findAll(){
+    return repository.findAll();
   }
 }
