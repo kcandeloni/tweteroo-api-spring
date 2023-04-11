@@ -1,6 +1,7 @@
 package com.tweteroo.api.services;
 
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,11 @@ public class TweetService {
     repository.save(data);
   }
 
-  public List<TweetApp> findAll(){
+  public List<TweetApp> findAll(int page){
     return repository.findAll();
+  }
+
+  public List<TweetApp> findTweetsByNameUser(String name){
+    return repository.findTweetsByName(name);
   }
 }
