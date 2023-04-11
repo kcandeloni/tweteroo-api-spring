@@ -1,7 +1,5 @@
 package com.tweteroo.api.models;
 
-import com.tweteroo.api.Dto.TweetDTO;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,10 +13,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class TweetApp {
   public TweetApp(
-    TweetDTO req
+    String username,
+    String text
   ){
-    this.username = req.username();
-    this.tweet = req.text();
+    this.username = username;
+    this.text = text;
   }
 
   @Id
@@ -29,5 +28,5 @@ public class TweetApp {
   private String username;
 
   @Column(length = 256, nullable = false)
-  private String tweet;
+  private String text;
 }
